@@ -1,0 +1,33 @@
+.App {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.Light {
+	color: var(--dark3);
+	border-color: var(--dark2);
+	background-color: var(--light1);
+}
+
+.Dark {
+	color: var(--light1);
+	border-color: var(--light2);
+	background-color: var(--dark2);
+
+}
+
+
+.SubApp {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.RouteWrapper {
+	height: 100%;
+	width: 100%;
+}

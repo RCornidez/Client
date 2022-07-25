@@ -1,0 +1,15 @@
+.Header {
+	border: inherit;
+	border-bottom: solid 2px;
+	color: inherit;
+	height: 80px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.BusinessName {
+	margin-left: 15px;
+}

@@ -1,0 +1,151 @@
+nav {
+	height:100%;
+
+}
+
+.ThemeSwitcher {
+	height: 48px;
+	width: 48px;
+	position: absolute;
+	right: 15px;
+	top: 90px;
+}
+
+.ThemeSwitcher button{
+	height: 100%;
+	width: 100%;
+}
+
+
+.DesktopNavigationWrapper {
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	align-content: center;	
+}
+
+.MobileNavigationWrapper {
+	display: none;
+}
+
+
+.NavigationList {
+	display:flex;
+	flex-direction: row;
+	height: 100%;
+	width: 100%;
+
+}
+
+.NavItem {
+	height: 100%;
+	padding: 0px 20px;
+	margin-right: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.DesktopItem {
+	font-size: 18px;
+}
+
+.DesktopItem:link, .DesktopItem:visited, .DesktopItem:hover {
+	text-decoration: none;
+	color: inherit;
+}
+
+
+@media only screen and (max-width: 800px) {
+
+.DesktopNavigationWrapper {
+	display: none;
+}
+
+.MobileNavigationWrapper {
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-content: center;	
+}
+
+.Show {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	backdrop-filter: blur(2px);
+	transition-duration: 5s;
+}
+
+.NoShow {
+	display: none;
+}
+
+.ItemLi {
+
+	width: 300px;
+	color: inherit;
+	border: inherit;
+	border: solid 2px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: orange;
+	box-shadow: 2px 2px 2px darkgrey;
+
+}
+
+.ItemLi:hover {
+	transition: 0.25s;
+	background-color: black;
+	color: orange;
+
+}
+
+.Item {
+	height: 100%;
+	width: 100%;
+	padding: 15px 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+}
+
+
+.Item:link, :visited, :hover {
+	text-decoration: none;
+	color: inherit;
+}
+
+.MenuWrapper {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.Menu {
+	height: 48px;
+	width: 48px;
+	margin-right: 15px;
+}
+
+.Cross {
+	background-color: red;
+}
+
+.Hamburger {
+	background-color: lightgreen;
+}
+
+}

@@ -1,0 +1,16 @@
+.Footer {
+	height: 160px;
+	width: 100%;
+	border: inherit;
+	border-top: solid 2px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	text-align: center;
+}
+
+.Footer ul li a:link, .Footer ul li a:visited {
+	text-decoration: none;
+	color: inherit;
+}
