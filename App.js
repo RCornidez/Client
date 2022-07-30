@@ -1,33 +1,38 @@
+/*
+This will be the home page 
+
+Table of Contents:
+	Imports
+	Define Business Data
+	Define React-Router Routes
+
+
+TODO:
+	Create Theme Toggle - Light, Dark, Color-Blind (Would be a plus!)
+	Eventually, Update the business data and maybe even the nav links to be queried
+
+*/
+
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
-import { store } from './reducers/theme.js';
 
-
-import './App.css';
-
-
-
+//Custom Components
 import Header from './components/header.js';
 import Footer from './components/footer.js';
+
+//Pages
 import Home from './pages/home.js';
 import Services from './pages/services.js';
 import Faq from './pages/faq.js';
 
-import { BusinessCard, MapCard, ServiceCard, FaqCard } from './components/card.js';
+//Styles
+import './App.css';
 
-
-
-//React Query query wrapper
-const queryClient = new QueryClient();
-
-//Import queries below
 
 
 
 
 function App() {
-
 
 //Define Business data below
 	const businessName = 'Modern LLC';
@@ -45,24 +50,9 @@ function App() {
 	                {link: 'FAQ', text: 'FAQ'},
 	];
 
-//Define a list of services
-	const ServicesList = [
-		{ title: 'test', price: 10, desctription: 'This is a test description.' },
-		{ title: 'test', price: 10, desctription: 'This is a test description.' },
-		{ title: 'test', price: 10, desctription: 'This is a test description.' },
-		{ title: 'test', price: 10, desctription: 'This is a test description.' },
-		{ title: 'test', price: 10, desctription: 'This is a test description.' },
-	];
-
-
-//Need to fix this - the redux state is not updating. It grabs the initial true value but does not update to dark (false) when changed. May be related to the local useState component in navigation.js. I think it is updating locally but not applying the action to the redux store.
-	const theme = () => {store.subscribe(() => store.getState())}; 
-
-	const currentTheme = theme ? 'App Light' : 'App Dark';
 
 	return (
 		<Router>
-		<QueryClientProvider client={queryClient}>
  			<div className={currentTheme}>
 				<Header businessName={businessName} navList={navList} />
 				<div className="SubApp">
@@ -76,7 +66,6 @@ function App() {
 					<Footer businessName={businessName} socialAccounts={socialAccounts} />
 				</div>
 			</div>
-		</QueryClientProvider>
 		</Router>
   );
 }
