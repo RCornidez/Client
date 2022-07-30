@@ -1,9 +1,9 @@
-# Client
-React with React Router
+# Client Template
+React with React Router and redux/toolkit
 
 
 TODO:
+  - Create localStorage for saved theme if null go to default
   - Update Redux to allow theme to toggle
-      a. check localStorage for saved theme if null go to default
-  - Update interaction with backend
-      a. Need to clean up the way it queries.
+	a. Create proper file structure
+  - Create RTK Query to thunk queries properly
