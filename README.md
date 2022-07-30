@@ -2,8 +2,7 @@
 React with React Router and redux/toolkit
 
 
-TODO:
-  - Create localStorage for saved theme if null go to default
-  - Update Redux to allow theme to toggle
-	a. Create proper file structure
-  - Create RTK Query to thunk queries properly
+<b>TODO:</b> <br/>
+	- Add Light/Dark Icons and align the button on both Desktop and Mobile Navbars <br/>
+	- Create localStorage for saved theme if null go to default <br/>
+	- Create RTK Query to thunk queries properly <br/>

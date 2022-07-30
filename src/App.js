@@ -8,22 +8,26 @@ Table of Contents:
 
 
 TODO:
-	Create Theme Toggle - Light, Dark, Color-Blind (Would be a plus!)
 	Eventually, Update the business data and maybe even the nav links to be queried
 
 */
 
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useSelector } from 'react-redux'
+
 
 //Custom Components
 import Header from './components/header.js';
 import Footer from './components/footer.js';
 
+
 //Pages
+/*
 import Home from './pages/home.js';
 import Services from './pages/services.js';
 import Faq from './pages/faq.js';
+*/
 
 //Styles
 import './App.css';
@@ -50,17 +54,19 @@ function App() {
 	                {link: 'FAQ', text: 'FAQ'},
 	];
 
+//Define the theme
+	const theme = useSelector((state) => state.theme.value)
 
 	return (
 		<Router>
- 			<div className={currentTheme}>
+ 			<div className={theme ? 'Light' : 'Dark'}>
 				<Header businessName={businessName} navList={navList} />
 				<div className="SubApp">
 		        		<div className="RouteWrapper">
 						<Routes>
-		          				<Route exact path="/" element={<Home />} />
-		          				<Route path="/Services" element={<Services />} />
-		          				<Route path="/FAQ" element={<Faq />} />
+			          				<Route exact path="/" element={<p>Home</p>} />
+		          				<Route path="/Services" element={<p>Services</p>} />
+		          				<Route path="/FAQ" element={<p>FAQ</p>} />
 	        				</Routes>
 					</div>
 					<Footer businessName={businessName} socialAccounts={socialAccounts} />

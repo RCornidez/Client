@@ -1,18 +1,13 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
-import { store } from '../reducers/theme.js';
+import { ThemeToggle } from '../features/themes/themes.js';
 
 import './navigation.css';
 
+/*
 const ThemeSwitcher = () => {
 	const [theme, setTheme] = useState(store.getState());
-
-	function themeFunction () {
-		store.dispatch({type: 'TOGGLE'});
-			return store.getState();
-	};
 
 	const toggleTheme = () => setTheme(themeFunction());
 
@@ -23,12 +18,14 @@ const ThemeSwitcher = () => {
                 </div>
         )
 };
+*/
 
 const DesktopNavigation = (props) => {
 	const NavigationList = props.navList;
 
 	return(
 		<div className="DesktopNavigationWrapper">
+				<ThemeToggle/>
 		    	<ul className='NavigationList'>
 		        	{NavigationList.map((nav) => (
 					<li className='NavItem'>
@@ -49,6 +46,7 @@ const MobileNavigation = (props) => {
 	    return (
 		    <div className='MobileNavigationWrapper' onClick={toggle}>
 		    	<div className={`${isOpen ? 'Show' : 'NoShow'}`} onClick={toggle}>
+					<ThemeToggle/>
 		        	<ul>
 		                	{NavigationList.map((nav) => (
 						<li className='ItemLi' key={nav.text}>
@@ -66,13 +64,13 @@ const MobileNavigation = (props) => {
 		        );
 };
 
-
+//Removed from below - insert when fixed
+//			<ThemeSwitcher />
 function Navigation (props) {
 
 
 	return (
 		<nav>
-			<ThemeSwitcher />
 			<DesktopNavigation navList={props.navList} />
 			<MobileNavigation navList={props.navList} />
 		</nav>
